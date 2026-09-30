@@ -22,4 +22,4 @@ if echo "$NGS2COUNTS_EXTRA_ARGS" | grep -qE '(--output-dir|-o\b)'; then
     exit 1
 fi
 
-"$NGS2COUNTS_EXECUTABLE" "${args[@]}" | tee "$RUNFOLDER/$NGS2COUNTS_LOG"
+OLINK_LOG_LEVEL=debug "$NGS2COUNTS_EXECUTABLE" "${args[@]}" 2>&1 | tee "$RUNFOLDER/$NGS2COUNTS_LOG"
